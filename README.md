@@ -96,7 +96,9 @@ The full reasoning and the runnable check tables for each area are in the `proto
 
 ## Install and quickstart
 
-Pick the front door that matches your tool. All three run the same audit. None of them sends your code anywhere.
+New here? Open the [audit scoper](https://dharmawan-id.github.io/nona/) in your browser. Answer a few questions about what is at stake, and copy the audit prompt it builds for your agent. No install, nothing leaves your browser.
+
+Or pick a front door below. All three run the same audit. None of them sends your code anywhere.
 
 ### Option 1: drop in `AGENTS.md` (works with most coding agents)
 

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NONA: scope your audit</title>
+  <meta name="description" content="A free audit scoper for the app you built with an AI tool but cannot read. Answer a few questions about what is at stake and get a ready-to-paste audit prompt for your own agent. Bilingual English and Indonesian." />
+  <meta name="color-scheme" content="light" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <meta property="og:title" content="NONA: scope your audit" />
+  <meta property="og:description" content="Non-Coder Audit. Answer a few questions, get a ready-to-paste audit prompt your AI agent runs on the app you built but cannot read." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <div class="masthead__inner">
+      <a class="brand" href="#top" aria-label="NONA home">
+        <span class="brand__mark" aria-hidden="true">NONA</span>
+        <span class="brand__sub" data-i18n="brandSub">Non-Coder Audit</span>
+      </a>
+      <nav class="masthead__nav" aria-label="Primary">
+        <a href="README.md" data-i18n="navRead">Read the protocol</a>
+        <a href="https://github.com/dharmawan-id/nona" data-i18n="navRepo" rel="noopener">Source</a>
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" class="lang__btn is-active" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" class="lang__btn" data-lang="id" aria-pressed="false">ID</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="hero__eyebrow" data-i18n="heroEyebrow">Free audit scoper</p>
+      <h1 class="hero__title">
+        <span data-i18n="heroTitleA">Scope your</span>
+        <span class="hero__mark" data-i18n="heroTitleB">audit</span>
+      </h1>
+      <p class="hero__lede" data-i18n="heroLede">You built an app with an AI tool and cannot read the code. Answer a few questions about what is at stake, and get a ready-to-paste prompt your own AI agent runs to audit it, scaled to your real risk.</p>
+      <div class="hero__meta">
+        <span data-i18n="heroMeta1">12 domains</span>
+        <span aria-hidden="true">/</span>
+        <span data-i18n="heroMeta2">3 rigor tiers</span>
+        <span aria-hidden="true">/</span>
+        <span data-i18n="heroMeta3">your agent runs it</span>
+      </div>
+      <a class="hero__start" href="#tool" data-i18n="heroStart">Scope my audit</a>
+    </section>
+
+    <section class="tool" id="tool" aria-labelledby="tool-heading">
+      <div class="tool__head">
+        <h2 id="tool-heading" class="tool__title" data-i18n="toolTitle">The audit scoper</h2>
+        <ol class="stepper" aria-hidden="true">
+          <li class="stepper__item is-current" data-step="1"><span>1</span><em data-i18n="step1">Stakes</em></li>
+          <li class="stepper__item" data-step="2"><span>2</span><em data-i18n="step2">Stack</em></li>
+          <li class="stepper__item" data-step="3"><span>3</span><em data-i18n="step3">Plan</em></li>
+        </ol>
+      </div>
+
+      <!-- STEP 1: stakes -->
+      <div class="panel is-active" data-panel="1">
+        <p class="panel__q" data-i18n="q1">What is at stake in your app?</p>
+        <p class="closer__note" style="margin:-16px 0 26px" data-i18n="q1hint">Tap everything that is true. Each one raises the rigor only where it applies. None of it leaves your browser.</p>
+        <div class="cards" id="signal-cards"></div>
+        <div class="panel__actions">
+          <button type="button" class="go" id="to2" data-i18n="next">Next: your stack</button>
+        </div>
+      </div>
+
+      <!-- STEP 2: stack (optional) -->
+      <div class="panel" data-panel="2">
+        <p class="panel__q" data-i18n="q2">What is it built with? (optional)</p>
+        <p class="closer__note" style="margin:-16px 0 26px" data-i18n="q2hint">Optional. Picking your stack adds the exact checks that matter for it to the prompt.</p>
+        <div class="chips" id="stack-chips"></div>
+        <div class="panel__actions">
+          <button type="button" class="back" data-back="1" data-i18n="back">Back</button>
+          <button type="button" class="go" id="run" data-i18n="run">Build my audit plan</button>
+        </div>
+      </div>
+
+      <!-- STEP 3: plan -->
+      <div class="panel" data-panel="3">
+        <div id="result" class="result" aria-live="polite"></div>
+        <div class="panel__actions">
+          <button type="button" class="back" data-back="2" data-i18n="back">Back</button>
+          <button type="button" class="go go--ghost" id="restart" data-i18n="restart">Start over</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="closer">
+      <p class="closer__note" data-i18n="closerNote">This is a starting scope, not a ruling. The stakes-gate is the same one in the protocol; read the full domain files before you rely on the result. An AI audit reduces risk, it does not guarantee safety, and it is not a human pen-test.</p>
+      <div class="closer__links">
+        <a href="README.md" data-i18n="closerProto">Protocol (English)</a>
+        <a href="id/README.md" data-i18n="closerId">Protokol (Indonesia)</a>
+        <a href="AGENTS.md" data-i18n="closerAgents">AGENTS.md</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="colophon">
+    <p>
+      <span data-i18n="footAuthor">Built by Dharmawan.</span>
+      <span data-i18n="footLicense">CC BY 4.0.</span>
+    </p>
+  </footer>
+
+  <script src="assets/data/nona.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
