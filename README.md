@@ -6,6 +6,8 @@ You shipped something with Lovable, Cursor, Bolt, Replit, v0, or Claude Code. It
 
 NONA is licensed CC-BY-4.0. It is plain text you can read yourself before you trust it. See the one-line security note at the bottom.
 
+An Indonesian-language edition is in [`id/`](id/README.md), built to the same depth.
+
 ## What NONA is
 
 Here is the problem NONA was built for. A non-coder who ships an app with an AI tool does not know what they do not know. You cannot ask your agent "is my code safe?" and trust the answer, because you do not know which questions a careful engineer would ask, and you cannot ask your agent the questions you have never heard of. A thumbs-up from the same tool that wrote the code is worth very little.
