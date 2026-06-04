@@ -1,0 +1,13 @@
+{
+  "name": "nona-audit",
+  "version": "0.1.0",
+  "description": "Install the NONA (Non-Coder Audit) protocol into your project: drop AGENTS.md, the Cursor adapter, or the Claude skill with one command.",
+  "type": "module",
+  "bin": { "nona-audit": "index.mjs" },
+  "files": ["index.mjs", "templates", "README.md"],
+  "engines": { "node": ">=18" },
+  "license": "MIT",
+  "homepage": "https://github.com/dharmawan-id/nona/tree/main/cli",
+  "repository": { "type": "git", "url": "git+https://github.com/dharmawan-id/nona.git", "directory": "cli" },
+  "keywords": ["nona", "audit", "security", "ai-agents", "vibe-coding", "agents-md", "cli", "non-coder"]
+}

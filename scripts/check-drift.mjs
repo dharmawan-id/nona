@@ -24,6 +24,18 @@ for (const copy of ["mcp/agents.md", "cli/templates/AGENTS.md"]) {
   check(c === agents, copy + " differs from AGENTS.md (regenerate: cp AGENTS.md " + copy + ")", copy + " matches AGENTS.md");
 }
 
+// 1b. Other bundled copies must match their source.
+for (const [copy, src] of [
+  ["cli/templates/nona.mdc", "adapters/cursor/nona.mdc"],
+  ["cli/templates/SKILL.md", "skills/nona-audit/SKILL.md"],
+  ["cli/templates/reference/tiers.md", "skills/nona-audit/reference/tiers.md"],
+  ["cli/templates/reference/stakes-signals.md", "skills/nona-audit/reference/stakes-signals.md"]
+]) {
+  const c = read(copy), s = read(src);
+  if (c === null) continue;
+  check(s !== null && c === s, copy + " differs from " + src + " (regenerate: cp " + src + " " + copy + ")", copy + " matches " + src);
+}
+
 // 2. The twelve domains must be consistent across gate.mjs, the web tool, and protocol/.
 check(DOMAINS.length === 12, "mcp/gate.mjs DOMAINS is not 12 (" + DOMAINS.length + ")", "gate.mjs has 12 domains");
 
