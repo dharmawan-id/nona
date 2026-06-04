@@ -1,0 +1,9 @@
+# Channels shown on the repository "Sponsor" button.
+github: [dharmawan-id]
+custom:
+  - "https://idparera.gumroad.com"
+# To add when handles are ready:
+# ko_fi: <kofi-username>
+# add Saweria / Trakteer under custom, for example:
+#   - "https://saweria.co/<username>"
+#   - "https://trakteer.id/<username>"
