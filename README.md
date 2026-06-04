@@ -118,6 +118,10 @@ That is the whole trigger. You can narrow it if you want (`/nona-audit B` audits
 
 For Cursor, copy `adapters/cursor/nona.mdc` into your project's `.cursor/rules/` folder. It is set to run only when you ask for it, not on every edit. Then ask Cursor's agent to audit, review, or security-check the project.
 
+### Option 4: the MCP server
+
+If your agent speaks MCP (Model Context Protocol), run NONA as a small local server so the agent pulls the protocol and scopes an audit on demand, with nothing copied into your project. Setup and the four tools are in [`mcp/`](mcp/).
+
 A note that applies to every option: run the audit in a clean, fresh session that has no memory of how the code was built. A review started in a separate session catches measurably more serious bugs than one run in the same chat that wrote the code, and a different AI model is better still, because models from the same family tend to share the same blind spots. This is the cheapest thing you can do to make the audit worth trusting, and NONA's `protocol/02-circularity-guard.md` explains the method in full.
 
 ## Evidence summary, with the caveats that keep it honest
