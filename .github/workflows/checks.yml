@@ -1,0 +1,26 @@
+name: checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  consistency:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Drift check (single sources of truth stay in sync)
+        run: node scripts/check-drift.mjs
+
+      - name: No em-dash in shipped files
+        run: |
+          if grep -rn "—" --include="*.md" --include="*.mjs" --include="*.html" --include="*.svg" --exclude-dir=node_modules . ; then
+            echo "::error::Em-dash found in shipped files (use a comma, colon, or rephrase)."
+            exit 1
+          fi
+          echo "No em-dash found."
