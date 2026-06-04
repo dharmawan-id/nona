@@ -1,4 +1,12 @@
+![NONA: audit the app you can't read](assets/banner.png)
+
 # NONA
+
+[![License: CC BY 4.0](https://img.shields.io/badge/license-CC%20BY%204.0-123047.svg)](LICENSE)
+[![12 domains](https://img.shields.io/badge/domains-12-8b2332.svg)](#what-nona-is)
+[![3 rigor tiers](https://img.shields.io/badge/rigor%20tiers-floor%20%C2%B7%20standard%20%C2%B7%20extra--mile-c9a227.svg)](#what-nona-is)
+[![Run by your AI agent](https://img.shields.io/badge/run%20by-your%20AI%20agent-0b0c0d.svg)](#how-it-works)
+[![Languages EN + ID](https://img.shields.io/badge/languages-EN%20%2B%20ID-9c6b35.svg)](id/README.md)
 
 A free, open-source audit for the app you built with an AI tool and cannot read.
 
