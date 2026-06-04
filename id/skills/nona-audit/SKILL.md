@@ -1,6 +1,6 @@
 ---
 name: nona-audit
-description: Use when someone asks to audit, security-check, or review an app that was built with an AI coding tool (Lovable, Cursor, Bolt, Replit, v0, Claude Code) or otherwise vibe-coded, especially when the person who built it cannot read the code. Runs a free, comprehensive, plain-language audit across twelve areas (security, data, payments, AI cost, dependencies, deploy, ops, architecture, and more), scaled to the app's real stakes, and tells the builder when to stop and hire a human. Triggers on "audit my app", "is my app safe", "security review", "audit aplikasi saya", "cek keamanan aplikasi", "review aplikasi saya", "aplikasi saya aman ngga", "/nona-audit".
+description: Use when someone asks to audit, security-check, or review an app that was built with an AI coding tool (Lovable, Cursor, Bolt, Replit, v0, Claude Code, Codex, Windsurf, Copilot, Antigravity, dan lainnya) or otherwise vibe-coded, especially when the person who built it cannot read the code. Runs a free, comprehensive, plain-language audit across twelve areas (security, data, payments, AI cost, dependencies, deploy, ops, architecture, and more), scaled to the app's real stakes, and tells the builder when to stop and hire a human. Triggers on "audit my app", "is my app safe", "security review", "audit aplikasi saya", "cek keamanan aplikasi", "review aplikasi saya", "aplikasi saya aman ngga", "/nona-audit".
 ---
 
 # Skill audit NONA
@@ -15,7 +15,7 @@ Jalankan ketika user meminta salah satu dari ini, dengan kata-kata apa pun:
 
 - "Audit aplikasi saya" atau "audit repo ini" atau "review kode saya".
 - "Aplikasi saya aman ngga" atau "ini secure ngga" atau "AI saya bangun ini dengan aman ngga".
-- "Cek keamanan aplikasi yang saya bangun pakai Lovable / Cursor / Bolt / Replit / v0 / Claude Code".
+- "Cek keamanan aplikasi yang saya bangun pakai Lovable / Cursor / Bolt / Replit / v0 / Claude Code / Codex / Windsurf / Copilot / Antigravity".
 - "Cek kode yang ditulis AI saya, saya ngga bisa baca kodenya".
 - Pemicu eksplisit: `/nona-audit`.
 

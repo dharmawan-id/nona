@@ -1,10 +1,20 @@
+![NONA: audit aplikasi yang tak bisa kamu baca](../assets/banner.png)
+
 # NONA
 
-Audit gratis dan open-source untuk aplikasi yang kamu bangun dengan alat AI dan tidak bisa kamu baca.
+**Audit Non-Coder. Audit gratis dan open-source yang dijalankan agen AI codingmu pada aplikasi yang kamu bangun tapi tak bisa kamu baca.**
+
+> Non-coder tidak tahu apa yang mereka tidak tahu. NONA adalah audit keamanan yang tak akan pernah bisa mereka tulis sendiri, dijalankan oleh agen yang bisa.
+
+[![Lisensi: CC BY 4.0](https://img.shields.io/badge/lisensi-CC%20BY%204.0-123047.svg)](../LICENSE)
+[![12 domain](https://img.shields.io/badge/domain-12-8b2332.svg)](#apa-itu-nona)
+[![3 tingkat rigor](https://img.shields.io/badge/tingkat-floor%20%C2%B7%20standard%20%C2%B7%20extra--mile-c9a227.svg)](#apa-itu-nona)
+[![Dijalankan agen AI-mu](https://img.shields.io/badge/dijalankan-agen%20AI--mu-0b0c0d.svg)](#cara-kerjanya)
+[![Bahasa EN + ID](https://img.shields.io/badge/bahasa-EN%20%2B%20ID-9c6b35.svg)](../README.md)
 
 Edisi bahasa Inggris: [../README.md](../README.md)
 
-Kamu merilis sesuatu dengan Lovable, Cursor, Bolt, Replit, v0, atau Claude Code. Ia jalan. Orang mulai memakainya. Dan kamu tidak punya cara nyata untuk tahu apakah ia aman, karena kamu tidak bisa membaca kodenya, dan jenis AI yang sama yang menulisnya akan dengan senang hati bilang ke kamu bahwa semuanya beres. NONA menutup celah itu. Kamu jatuhkan ia ke dalam proyekmu, agen AI-mu sendiri yang menjalankannya, dan kamu dapat balik sebuah laporan dalam bahasa biasa: apa yang bisa menyakiti bisnismu, apa yang diperbaiki lebih dulu, dan satu momen ketika kamu sebaiknya berhenti dan membayar seorang ahli manusia.
+Kamu merilis sesuatu dengan Lovable, Cursor, Bolt, Replit, v0, Claude Code, Codex, Windsurf, Copilot, Antigravity, atau alat AI coding lain. Ia jalan. Orang mulai memakainya. Dan kamu tidak punya cara nyata untuk tahu apakah ia aman, karena kamu tidak bisa membaca kodenya, dan jenis AI yang sama yang menulisnya akan dengan senang hati bilang ke kamu bahwa semuanya beres. NONA menutup celah itu. Kamu jatuhkan ia ke dalam proyekmu, agen AI-mu sendiri yang menjalankannya, dan kamu dapat balik sebuah laporan dalam bahasa biasa: apa yang bisa menyakiti bisnismu, apa yang diperbaiki lebih dulu, dan satu momen ketika kamu sebaiknya berhenti dan membayar seorang ahli manusia.
 
 NONA berlisensi CC-BY-4.0. Ia teks polos yang bisa kamu baca sendiri sebelum kamu memercayainya. Lihat catatan keamanan satu baris di bagian bawah.
 
@@ -17,6 +27,10 @@ NONA adalah daftar periksa yang dibawa engineer teliti itu di kepalanya, ditulis
 Ia mencakup dua belas bidang, diberi huruf A sampai L, dan di dalam tiap bidang ia tahu tiga kedalaman ketelitian: floor (dasar), standard (standar wajar), dan extra-mile (upaya lebih). Cakupannya menyeluruh dengan sengaja, sampai ke praktik yang bahkan tim engineering kuat perlakukan sebagai usaha tambahan. Ia tetap cerdas alih-alih boros dengan membaca seberapa besar yang sungguh dipertaruhkan di proyek spesifikmu lalu menaikkan ketelitian hanya di tempat yang risikonya memang pantas. Aplikasi pembayaran-dan-login dengan agen AI yang bertindak sendiri pantas dapat pemeriksaan garis terdepan. Daftar tugas akhir pekan pantas dapat floor saja. Bingkai yang jujur: NONA adalah lapisan penerjemahan dan pemilihan di atas otoritas keamanan yang nyata, disebut namanya, dan bertanggal, dikemas supaya agen-mu bisa menjalankannya. Ia tidak menghasilkan riset keamanan orisinal, dan ia tidak berpura-pura begitu. Tiap pemeriksaan floor dan standard berujung pada kontrol terbit yang bisa kamu cari sendiri.
 
 Apa yang bukan NONA: sebuah situs web yang kamu kunjungi lalu menempelkan hasilnya kembali, daftar periksa keamanan-saja yang datar, atau pengganti seorang ahli manusia ketika taruhannya tinggi. Ia adalah audit menyeluruh yang dijalankan agen-mu sendiri secara gratis, dan ia jujur soal di mana batasnya berada.
+
+## Audit dalam satu layar
+
+![Cara kerja NONA: deteksi taruhan, skala rigor per domain, jalankan dua belas domain, hasilkan artefak, lalu putuskan dan beri tahu kapan harus menyewa manusia](../assets/architecture.svg)
 
 ## Untuk siapa
 

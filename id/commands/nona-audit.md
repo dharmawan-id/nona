@@ -2,7 +2,7 @@
 
 Perintah slash yang memulai audit NONA. Kamu yang mengetiknya; AI agent kamu yang menjalankan seluruh protokolnya, lalu mengembalikan laporan dalam bahasa yang mudah dipahami.
 
-NONA adalah protokol audit gratis untuk orang yang membangun aplikasi pakai AI coding tool (Lovable, Cursor, Bolt, Replit, v0, Claude Code) tapi tidak bisa membaca kodenya sendiri. Halaman ini adalah spesifikasi untuk trigger-nya: apa yang kamu ketik, apa yang agent kerjakan sesudah kamu ketik, dan apa yang kamu terima balik. Pengetahuan auditnya sendiri tersimpan di file-file `protocol/`; perintah ini cuma melepas agent untuk mengerjakannya dengan urutan yang benar.
+NONA adalah protokol audit gratis untuk orang yang membangun aplikasi pakai AI coding tool (Lovable, Cursor, Bolt, Replit, v0, Claude Code, Codex, Windsurf, Copilot, Antigravity, dan lainnya) tapi tidak bisa membaca kodenya sendiri. Halaman ini adalah spesifikasi untuk trigger-nya: apa yang kamu ketik, apa yang agent kerjakan sesudah kamu ketik, dan apa yang kamu terima balik. Pengetahuan auditnya sendiri tersimpan di file-file `protocol/`; perintah ini cuma melepas agent untuk mengerjakannya dengan urutan yang benar.
 
 ## Yang kamu ketik
 

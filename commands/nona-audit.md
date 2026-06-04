@@ -2,7 +2,7 @@
 
 The slash command that starts a NONA audit. You type it; your AI agent runs the whole protocol and hands back a plain-language report.
 
-NONA is a free audit protocol for people who built an app with an AI coding tool (Lovable, Cursor, Bolt, Replit, v0, Claude Code) and cannot read the code. This page is the spec for the trigger: what you type, what the agent does after you type it, and what you get back. The audit knowledge itself lives in the `protocol/` files; this command just sets the agent loose on them in the right order.
+NONA is a free audit protocol for people who built an app with an AI coding tool (Lovable, Cursor, Bolt, Replit, v0, Claude Code, Codex, Windsurf, Copilot, Antigravity, and others) and cannot read the code. This page is the spec for the trigger: what you type, what the agent does after you type it, and what you get back. The audit knowledge itself lives in the `protocol/` files; this command just sets the agent loose on them in the right order.
 
 ## What you type
 

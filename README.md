@@ -8,9 +8,11 @@
 [![Run by your AI agent](https://img.shields.io/badge/run%20by-your%20AI%20agent-0b0c0d.svg)](#how-it-works)
 [![Languages EN + ID](https://img.shields.io/badge/languages-EN%20%2B%20ID-9c6b35.svg)](id/README.md)
 
-A free, open-source audit for the app you built with an AI tool and cannot read.
+**Non-Coder Audit. A free, open-source audit your AI coding agent runs on the app you built but cannot read.**
 
-You shipped something with Lovable, Cursor, Bolt, Replit, v0, or Claude Code. It runs. People are starting to use it. And you have no real way to know whether it is safe, because you cannot read the code, and the same kind of AI that wrote it will happily tell you it looks fine. NONA closes that gap. You drop it into your project, your own AI agent runs it, and you get back a plain-language report: what could hurt your business, what to fix first, and the one moment you should stop and pay a human expert.
+> Non-coders don't know what they don't know. NONA is the security audit they could never write, run by the agent that can.
+
+You shipped something with Lovable, Cursor, Bolt, Replit, v0, Claude Code, Codex, Windsurf, Copilot, Antigravity, or another AI coding tool. It runs. People are starting to use it. And you have no real way to know whether it is safe, because you cannot read the code, and the same kind of AI that wrote it will happily tell you it looks fine. NONA closes that gap. You drop it into your project, your own AI agent runs it, and you get back a plain-language report: what could hurt your business, what to fix first, and the one moment you should stop and pay a human expert.
 
 NONA is licensed CC-BY-4.0. It is plain text you can read yourself before you trust it. See the one-line security note at the bottom.
 
@@ -25,6 +27,10 @@ NONA is the checklist that careful engineer carries around in their head, writte
 It covers twelve areas, lettered A through L, and within each it knows three depths of rigor: floor, standard, and extra-mile. The coverage goes deep on purpose, reaching practices that even strong engineering teams treat as extended effort. It stays smart instead of wasteful by reading how much is genuinely at stake in your specific project and turning the rigor up only where the stakes earn it. A payments-and-login app with an AI agent that acts on its own earns the frontier checks. A weekend to-do list earns only the floor. The honest framing: NONA is a translation and selection layer over real, named, dated security authorities, packaged so your agent can run it. It is not original security research, and it does not pretend to be. Every floor and standard check resolves to a published control you can look up.
 
 What NONA is not: a website you visit and paste results back from, a flat security-only checklist, or a substitute for a human expert when the stakes are high. It is a comprehensive audit your own agent runs for free, and it is honest about where its limits are.
+
+## The audit in one screen
+
+![How NONA works: your agent detects stakes, scales rigor per domain, runs twelve domains, produces artifacts, then decides and tells you when to hire a human](assets/architecture.svg)
 
 ## Who it is for
 

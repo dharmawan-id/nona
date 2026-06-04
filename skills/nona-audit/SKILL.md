@@ -1,6 +1,6 @@
 ---
 name: nona-audit
-description: Use when someone asks to audit, security-check, or review an app that was built with an AI coding tool (Lovable, Cursor, Bolt, Replit, v0, Claude Code) or otherwise vibe-coded, especially when the person who built it cannot read the code. Runs a free, comprehensive, plain-language audit across twelve areas (security, data, payments, AI cost, dependencies, deploy, ops, architecture, and more), scaled to the app's real stakes, and tells the builder when to stop and hire a human. Triggers on "audit my app", "is my app safe", "security review", "check the code my AI wrote", "/nona-audit".
+description: Use when someone asks to audit, security-check, or review an app that was built with an AI coding tool (Lovable, Cursor, Bolt, Replit, v0, Claude Code, Codex, Windsurf, Copilot, Antigravity, and others) or otherwise vibe-coded, especially when the person who built it cannot read the code. Runs a free, comprehensive, plain-language audit across twelve areas (security, data, payments, AI cost, dependencies, deploy, ops, architecture, and more), scaled to the app's real stakes, and tells the builder when to stop and hire a human. Triggers on "audit my app", "is my app safe", "security review", "check the code my AI wrote", "/nona-audit".
 ---
 
 # NONA audit skill
@@ -15,7 +15,7 @@ Run it when a user asks any of these, in any wording:
 
 - "Audit my app" or "audit this repo" or "review my code."
 - "Is my app safe" or "is this secure" or "did my AI build this safely."
-- "Security-check the thing I built with Lovable / Cursor / Bolt / Replit / v0 / Claude Code."
+- "Security-check the thing I built with Lovable / Cursor / Bolt / Replit / v0 / Claude Code / Codex / Windsurf / Copilot / Antigravity."
 - "Check the code my AI wrote, I can't read it."
 - The explicit trigger: `/nona-audit`.
 

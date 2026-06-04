@@ -1,6 +1,6 @@
 # NONA: Gambaran Umum
 
-NONA adalah protokol audit gratis dan open-source untuk orang yang membangun aplikasi dengan alat coding AI (Lovable, Cursor, Bolt, Replit, v0, Claude Code) dan tidak bisa membaca kode yang keluar dari alat itu. Kamu taruh NONA ke dalam proyekmu. AI agent milikmu sendiri yang menjalankannya. Kamu dapat balik laporan dalam bahasa yang mudah dimengerti: apa saja yang bisa membahayakan bisnismu, apa yang harus diperbaiki duluan, dan satu momen di mana kamu sebaiknya berhenti dan bayar ahli manusia.
+NONA adalah protokol audit gratis dan open-source untuk orang yang membangun aplikasi dengan alat coding AI (Lovable, Cursor, Bolt, Replit, v0, Claude Code, Codex, Windsurf, Copilot, Antigravity, dan lainnya) dan tidak bisa membaca kode yang keluar dari alat itu. Kamu taruh NONA ke dalam proyekmu. AI agent milikmu sendiri yang menjalankannya. Kamu dapat balik laporan dalam bahasa yang mudah dimengerti: apa saja yang bisa membahayakan bisnismu, apa yang harus diperbaiki duluan, dan satu momen di mana kamu sebaiknya berhenti dan bayar ahli manusia.
 
 Halaman ini menjelaskan ide di balik NONA, kenapa NONA ada, bagaimana NONA tetap menyeluruh tanpa membuang-buang waktumu untuk hal yang tidak dibutuhkan aplikasimu, dua belas area yang dicakupnya, dan cara membaca file tiap area.
 

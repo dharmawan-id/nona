@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 540" font-family="Archivo, Arial, Helvetica, sans-serif" role="img" aria-label="How NONA works: your agent detects stakes, scales rigor per domain, runs twelve domains, produces artifacts, then decides and tells you when to hire a human">
+  <rect width="1040" height="540" fill="#efe7d6"/>
+
+  <!-- Premise bar -->
+  <rect x="40" y="26" width="960" height="54" fill="#0b0c0d"/>
+  <text x="520" y="60" text-anchor="middle" fill="#efe7d6" font-size="18" font-weight="800" letter-spacing="0.4">PREMISE: YOU CANNOT AUDIT WHAT YOU CANNOT READ. YOUR AGENT CAN.</text>
+
+  <!-- Circularity strip -->
+  <rect x="40" y="98" width="960" height="38" fill="#f5efe0" stroke="#0b0c0d" stroke-width="2"/>
+  <text x="56" y="122" fill="#123047" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" letter-spacing="1">FIRST, RUN IT LIKE A STRANGER: a fresh context, ideally a different model. (the circularity guard)</text>
+
+  <!-- Pipeline label -->
+  <text x="40" y="172" fill="#0b0c0d" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" letter-spacing="2">WHAT YOUR AGENT DOES, IN ORDER</text>
+
+  <!-- ===== Pipeline (5 steps) ===== -->
+  <!-- Step 1 DETECT STAKES (navy) -->
+  <rect x="45" y="191" width="172" height="108" fill="#0b0c0d"/>
+  <rect x="40" y="186" width="172" height="108" fill="#123047" stroke="#0b0c0d" stroke-width="3"/>
+  <text x="55" y="221" fill="#c9a227" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700">1</text>
+  <text x="55" y="247" fill="#efe7d6" font-size="17" font-weight="800">DETECT STAKES</text>
+  <text x="55" y="268" fill="#efe7d6" font-family="JetBrains Mono, monospace" font-size="11">six signals (S1-S6)</text>
+  <text x="55" y="284" fill="#a9b6c2" font-family="JetBrains Mono, monospace" font-size="10">money, auth, PII, agency</text>
+
+  <!-- Step 2 SCALE RIGOR (card) -->
+  <rect x="239" y="191" width="172" height="108" fill="#0b0c0d"/>
+  <rect x="234" y="186" width="172" height="108" fill="#f5efe0" stroke="#0b0c0d" stroke-width="3"/>
+  <text x="249" y="221" fill="#123047" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700">2</text>
+  <text x="249" y="247" fill="#0b0c0d" font-size="17" font-weight="800">SCALE RIGOR</text>
+  <text x="249" y="268" fill="#3a362f" font-family="JetBrains Mono, monospace" font-size="11">a tier per domain</text>
+  <text x="249" y="284" fill="#5a5347" font-family="JetBrains Mono, monospace" font-size="10">floor / standard / extra</text>
+
+  <!-- Step 3 RUN 12 DOMAINS (navy) -->
+  <rect x="433" y="191" width="172" height="108" fill="#0b0c0d"/>
+  <rect x="428" y="186" width="172" height="108" fill="#123047" stroke="#0b0c0d" stroke-width="3"/>
+  <text x="443" y="221" fill="#c9a227" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700">3</text>
+  <text x="443" y="247" fill="#efe7d6" font-size="17" font-weight="800">RUN 12 DOMAINS</text>
+  <text x="443" y="268" fill="#efe7d6" font-family="JetBrains Mono, monospace" font-size="11">A through L</text>
+  <text x="443" y="284" fill="#a9b6c2" font-family="JetBrains Mono, monospace" font-size="10">intent to decide</text>
+
+  <!-- Step 4 ARTIFACTS (card) -->
+  <rect x="627" y="191" width="172" height="108" fill="#0b0c0d"/>
+  <rect x="622" y="186" width="172" height="108" fill="#f5efe0" stroke="#0b0c0d" stroke-width="3"/>
+  <text x="637" y="221" fill="#123047" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700">4</text>
+  <text x="637" y="247" fill="#0b0c0d" font-size="17" font-weight="800">ARTIFACTS</text>
+  <text x="637" y="268" fill="#3a362f" font-family="JetBrains Mono, monospace" font-size="11">evidence, not verdicts</text>
+  <text x="637" y="284" fill="#5a5347" font-family="JetBrains Mono, monospace" font-size="10">a findings table</text>
+
+  <!-- Step 5 DECIDE + ACT (red focal) -->
+  <rect x="821" y="191" width="172" height="108" fill="#0b0c0d"/>
+  <rect x="816" y="186" width="172" height="108" fill="#8b2332" stroke="#0b0c0d" stroke-width="3"/>
+  <text x="831" y="221" fill="#c9a227" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700">5</text>
+  <text x="831" y="247" fill="#efe7d6" font-size="17" font-weight="800">DECIDE + ACT</text>
+  <text x="831" y="268" fill="#efe7d6" font-family="JetBrains Mono, monospace" font-size="11">fix, or hire a human</text>
+  <text x="831" y="284" fill="#e7c2c8" font-family="JetBrains Mono, monospace" font-size="10">when AI is not enough</text>
+
+  <!-- arrows between steps (y mid 240) -->
+  <g stroke="#0b0c0d" stroke-width="3" fill="#0b0c0d">
+    <line x1="212" y1="240" x2="234" y2="240"/><polygon points="234,240 222,234 222,246"/>
+    <line x1="406" y1="240" x2="428" y2="240"/><polygon points="428,240 416,234 416,246"/>
+    <line x1="600" y1="240" x2="622" y2="240"/><polygon points="622,240 610,234 610,246"/>
+    <line x1="794" y1="240" x2="816" y2="240"/><polygon points="816,240 804,234 804,246"/>
+  </g>
+
+  <!-- ===== Twelve domains strip ===== -->
+  <text x="40" y="344" fill="#0b0c0d" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" letter-spacing="2">THE TWELVE DOMAINS</text>
+
+  <!-- 12 cells, one row -->
+  <g font-family="JetBrains Mono, monospace">
+    <!-- helper pattern per cell: card rect + ink border, big navy letter, tiny label -->
+    <g>
+      <rect x="40" y="356" width="74" height="46" fill="#f5efe0" stroke="#0b0c0d" stroke-width="2"/>
+      <text x="50" y="380" fill="#123047" font-family="Archivo, sans-serif" font-size="20" font-weight="800">A</text>
+      <text x="50" y="395" fill="#3a362f" font-size="9">intent</text>
+    </g>
+    <g>
+      <rect x="120" y="356" width="74" height="46" fill="#f5efe0" stroke="#0b0c0d" stroke-width="2"/>
+      <text x="130" y="380" fill="#123047" font-family="Archivo, sans-serif" font-size="20" font-weight="800">B</text>
+      <text x="130" y="395" fill="#3a362f" font-size="9">auth</text>
+    </g>
+    <g>
+      <rect x="200" y="356" width="74" height="46" fill="#f5efe0" stroke="#0b0c0d" stroke-width="2"/>
+      <text x="210" y="380" fill="#123047" font-family="Archivo, sans-serif" font-size="20" font-weight="800">C</text>
+      <text x="210" y="395" fill="#3a362f" font-size="9">input</text>
+    </g>
+    <g>
+      <rect x="280" y="356" width="74" height="46" fill="#f5efe0" stroke="#0b0c0d" stroke-width="2"/>
+      <text x="290" y="380" fill="#123047" font-family="Archivo, sans-serif" font-size="20" font-weight="800">D</text>
+      <text x="290" y="395" fill="#3a362f" font-size="9">data</text>
+    </g>
+    <g>
+      <rect x="360" y="356" width="74" height="46" fill="#f5efe0" stroke="#0b0c0d" stroke-width="2"/>
+      <text x="370" y="380" fill="#123047" font-family="Archivo, sans-serif" font-size="20" font-weight="800">E</text>
+      <text x="370" y="395" fill="#3a362f" font-size="9">payments</text>
+    </g>
+    <g>
+      <rect x="440" y="356" width="74" height="46" fill="#f5efe0" stroke="#0b0c0d" stroke-width="2"/>
+      <text x="450" y="380" fill="#123047" font-family="Archivo, sans-serif" font-size="20" font-weight="800">F</text>
+      <text x="450" y="395" fill="#3a362f" font-size="9">ai-code</text>
+    </g>
+    <g>
+      <rect x="520" y="356" width="74" height="46" fill="#f5efe0" stroke="#0b0c0d" stroke-width="2"/>
+      <text x="530" y="380" fill="#123047" font-family="Archivo, sans-serif" font-size="20" font-weight="800">G</text>
+      <text x="530" y="395" fill="#3a362f" font-size="9">supply</text>
+    </g>
+    <g>
+      <rect x="600" y="356" width="74" height="46" fill="#f5efe0" stroke="#0b0c0d" stroke-width="2"/>
+      <text x="610" y="380" fill="#123047" font-family="Archivo, sans-serif" font-size="20" font-weight="800">H</text>
+      <text x="610" y="395" fill="#3a362f" font-size="9">config</text>
+    </g>
+    <g>
+      <rect x="680" y="356" width="74" height="46" fill="#f5efe0" stroke="#0b0c0d" stroke-width="2"/>
+      <text x="690" y="380" fill="#123047" font-family="Archivo, sans-serif" font-size="20" font-weight="800">I</text>
+      <text x="690" y="395" fill="#3a362f" font-size="9">ops</text>
+    </g>
+    <g>
+      <rect x="760" y="356" width="74" height="46" fill="#f5efe0" stroke="#0b0c0d" stroke-width="2"/>
+      <text x="770" y="380" fill="#123047" font-family="Archivo, sans-serif" font-size="20" font-weight="800">J</text>
+      <text x="770" y="395" fill="#3a362f" font-size="9">arch</text>
+    </g>
+    <g>
+      <rect x="840" y="356" width="74" height="46" fill="#f5efe0" stroke="#0b0c0d" stroke-width="2"/>
+      <text x="850" y="380" fill="#123047" font-family="Archivo, sans-serif" font-size="20" font-weight="800">K</text>
+      <text x="850" y="395" fill="#3a362f" font-size="9">pen-test</text>
+    </g>
+    <g>
+      <rect x="920" y="356" width="74" height="46" fill="#f5efe0" stroke="#0b0c0d" stroke-width="2"/>
+      <text x="930" y="380" fill="#123047" font-family="Archivo, sans-serif" font-size="20" font-weight="800">L</text>
+      <text x="930" y="395" fill="#3a362f" font-size="9">decide</text>
+    </g>
+  </g>
+
+  <!-- ===== Footer: honest ceiling ===== -->
+  <rect x="40" y="432" width="960" height="74" fill="#0b0c0d"/>
+  <text x="520" y="462" text-anchor="middle" fill="#c9a227" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" letter-spacing="2">THE HONEST CEILING</text>
+  <text x="520" y="488" text-anchor="middle" fill="#efe7d6" font-family="JetBrains Mono, monospace" font-size="12" letter-spacing="0.5">RISK REDUCER, NOT A GUARANTEE   ·   ~28.6% AI-REVIEW CEILING   ·   NOT A HUMAN PEN-TEST</text>
+</svg>
