@@ -7,7 +7,7 @@
   "main": "server.mjs",
   "files": ["server.mjs", "gate.mjs", "agents.md", "README.md"],
   "engines": { "node": ">=18" },
-  "license": "CC-BY-4.0",
+  "license": "MIT",
   "homepage": "https://github.com/dharmawan-id/nona/tree/main/mcp",
   "repository": { "type": "git", "url": "git+https://github.com/dharmawan-id/nona.git", "directory": "mcp" },
   "keywords": ["mcp", "model-context-protocol", "nona", "audit", "security", "ai-agents", "vibe-coding", "non-coder"],

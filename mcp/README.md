@@ -50,4 +50,4 @@ NONA is itself an instruction set an agent ingests, the exact file class attacke
 
 ## License
 
-CC-BY-4.0, the same as the protocol. The `agents.md` in this folder is a bundled copy of the repo's `AGENTS.md`; regenerate it with `cp ../AGENTS.md agents.md` when the protocol changes.
+MIT (this folder is code). The protocol text it serves is CC-BY-4.0. The `agents.md` in this folder is a bundled copy of the repo's `AGENTS.md`; regenerate it with `cp ../AGENTS.md agents.md` when the protocol changes.

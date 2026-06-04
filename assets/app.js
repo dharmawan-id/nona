@@ -35,7 +35,7 @@
     closerId: { en: "Protokol (Indonesia)", id: "Protokol (Indonesia)" },
     closerAgents: { en: "AGENTS.md", id: "AGENTS.md" },
     footAuthor: { en: "Built by Dharmawan.", id: "Dibuat oleh Dharmawan." },
-    footLicense: { en: "CC BY 4.0.", id: "CC BY 4.0." },
+    footLicense: { en: "Protocol CC BY 4.0, code MIT.", id: "Protokol CC BY 4.0, kode MIT." },
     // result
     rPlanK: { en: "Your audit plan", id: "Rencana auditmu" },
     rStakes: { en: "What is at stake", id: "Yang dipertaruhkan" },

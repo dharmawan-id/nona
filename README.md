@@ -145,7 +145,7 @@ NONA reduces risk. It does not guarantee safety. Overstating it would hand you t
 
 ## License
 
-NONA is released under the Creative Commons Attribution 4.0 International license (CC-BY-4.0). You are free to use, share, adapt, and build on it, including commercially, as long as you give appropriate credit. The full text is in `LICENSE`.
+NONA is dual-licensed. The protocol and all prose (`protocol/`, `AGENTS.md`, `CITATIONS.md`, `SECURITY.md`, `docs/`, the README files, and the Indonesian edition under `id/`) are under [Creative Commons Attribution 4.0 International](LICENSE), CC-BY-4.0: use, share, and adapt with credit. The code (the interactive tool in `index.html` and `assets/`, and the MCP server in `mcp/`) is under the [MIT License](LICENSE-CODE). Both permit commercial use.
 
 ## Security
 

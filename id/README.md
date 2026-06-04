@@ -139,7 +139,7 @@ NONA mengurangi risiko. Ia tidak menjamin keamanan. Melebih-lebihkannya akan men
 
 ## Lisensi
 
-NONA dirilis di bawah lisensi Creative Commons Attribution 4.0 International (CC-BY-4.0). Kamu bebas memakai, membagikan, mengadaptasi, dan membangun di atasnya, termasuk secara komersial, selama kamu memberi kredit yang sesuai. Teks lengkapnya ada di ../LICENSE.
+NONA berlisensi ganda. Protokol dan seluruh teksnya (`protocol/`, `AGENTS.md`, `CITATIONS.md`, `SECURITY.md`, `docs/`, file README, dan edisi Indonesia di `id/`) memakai [Creative Commons Attribution 4.0 International](../LICENSE), CC-BY-4.0: pakai, bagikan, dan adaptasi dengan kredit. Kodenya (tool interaktif di `index.html` dan `assets/`, serta MCP server di `mcp/`) memakai [Lisensi MIT](../LICENSE-CODE). Keduanya mengizinkan penggunaan komersial.
 
 ## Keamanan
 
