@@ -1,0 +1,81 @@
+# Domain E: Payments, Monetization, and AI Cost
+
+## What this is
+
+This domain covers every place where money or paid usage flows through your app: taking a payment, recording that a payment succeeded, granting credits or a subscription, metering usage, and calling a paid AI service that bills you per request. The danger here is not only "can a stranger steal a card number." It is also "can someone get a paid plan for free," "can a script abuse a flow that costs you money on every run," and "can your AI usage quietly generate a bill you cannot pay." Payment providers handle the card data; your app still has to verify what the provider tells it, grant only what was actually paid for, and put a ceiling on anything that spends money on your behalf.
+
+## What you can't see here
+
+When a payment tool drops a checkout button into your app and money lands in your account during testing, it looks finished. The part you cannot see is everything that happens after the customer pays. The payment provider sends your app a small message in the background (a "webhook," an automated server-to-server notification that says "order 123 was paid") and your app is supposed to react to it by unlocking the product. Two failures hide here and neither shows up in a normal test.
+
+First, a webhook can be forged. Anyone who learns or guesses your webhook address can send your app a fake "payment succeeded" message, and if your app trusts it without checking the cryptographic signature the provider attaches, the attacker gets the paid product for free. Your own AI agent, asked only to "make checkout work," will usually wire the happy path and skip the signature check, because the happy path is what gets tested and the forgery path is invisible until someone exploits it.
+
+Second, the amount, the plan, and the order can be tampered with. If your app reads the price or the plan name from the checkout request the browser sent, a user can edit that request and pay one cent for a plan that costs fifty dollars. The fix is to ignore what the browser claims and re-check the real price and the real order status against your own database and the provider's record. This is the kind of thing a non-coder cannot inspect, and a same-context self-review by the same AI that wrote it tends to miss, because the code "works" in the demo.
+
+The newest blind spot is cost. If your app calls a paid AI service, every request spends real money, and an automated loop or an abusive user can run that up fast. Reported cases describe an organization spending around USD 500 million on one AI provider in a single month, and Uber reportedly burning its annual AI budget in four months. Those exact figures come from one secondary report and should be read as illustrative rather than precise, but the pattern is real and documented: unbounded AI usage is the new runaway-cloud-bill story, and the person running an agent loop is the least likely to see it coming.
+
+## When this matters (stakes signals)
+
+Tier for this domain is set by which stakes signals touch the money or paid-usage surface.
+
+- **S1 Money** (the app handles payments, billing, payouts, or credits with cash value): forces this domain to **standard** at minimum.
+- **S6 Irreversibility** (a charge, payout, or credit grant cannot be cleanly undone): forces this domain to **standard** at minimum.
+- **S5 Blast radius** (many users, multi-tenant, a public API, shared billing): combined with S1 or S6, forces this domain to **extra-mile**.
+
+A hard, day-one rule sits on top of the count: if the app calls a paid AI service in production, AI cost guardrails (a hard spending cap and a soft warning cap) are required at the **floor**, even when no other signal is present. A small app with no payments but a live paid AI call still earns the cost-cap floor checks, because the bill is real from the first request.
+
+If none of S1, S5, or S6 touch this surface and there is no paid AI call, only the floor applies, and you should not build elaborate billing-abuse defenses for a flow that moves no money.
+
+## Floor checks
+
+Never skip these when any money or paid-usage flow exists. If a paid AI call exists, the two cost-cap rows apply even with no payments.
+
+| Check (do this) | Why it matters to your business | Evidence the agent must produce | Citation |
+|---|---|---|---|
+| Find every webhook endpoint that a payment provider calls, and confirm each one verifies the provider's signature before trusting the message. | Without it, anyone who finds the webhook address can send a fake "payment succeeded" and get your paid product for free. | A list of every payment webhook route (file and path), and for each one the exact line that checks the signature, or an explicit note "NO SIGNATURE CHECK" naming the unprotected route. | OWASP Top 10:2025 A08 (Software or Data Integrity Failures); OWASP Top 10:2025 A01 (Broken Access Control) |
+| Confirm the app decides what to unlock based on the amount, plan, and order status it re-reads from its own database and the provider, never from values the browser sent. | A user can edit the checkout request and pay one cent for a fifty-dollar plan if the app trusts the browser's numbers. | The server code that grants access, annotated to show where price, plan, and paid-status come from (own DB or provider lookup), and a flagged line for any value taken from the incoming request body. | OWASP API Security Top 10 2023 API6 (Unrestricted Access to Sensitive Business Flows) |
+| Confirm a repeated or replayed webhook cannot grant the product twice or double-charge (idempotency: the same event processed again is a safe no-op). | Providers retry webhooks on timeout; without a guard, one real payment can grant credits twice or trigger a duplicate payout. | The mechanism that records processed event IDs (table or key) and the check that skips an already-seen event, or a note that retries are unguarded. | OWASP Top 10:2025 A08 (Software or Data Integrity Failures) |
+| Confirm all payment-provider secret keys (server keys, webhook signing secrets) live only on the server and never in the browser bundle or in git. | A secret key in client-side code or a public repo lets anyone charge, refund, or read payment data as you. | The result of scanning the client bundle and git history for provider key patterns: the actual finding (clean, or the exact location of any exposed key). | OWASP Top 10:2025 A02 (Security Misconfiguration); OWASP Top 10:2025 A04 (Cryptographic Failures) |
+| If the app calls a paid AI service, confirm a hard total spend cap exists that stops usage when reached. | A runaway loop or abusive user can otherwise generate a bill far beyond anything you can pay, with no automatic stop. | The exact configuration or code enforcing the hard cap (provider-level budget limit or in-app counter that blocks further calls), with the limit value stated. | OWASP Top 10 for LLM Apps 2025 LLM10 (Unbounded Consumption) |
+| If the app calls a paid AI service, confirm a per-user or per-session rate limit exists so one actor cannot drive unlimited paid calls. | One user (or one stuck loop) can otherwise consume the entire budget and deny the service to everyone else while running up cost. | The rate-limit rule applied to the paid-AI path (scope, threshold, and where it is enforced), or a note that the path is uncapped per user. | OWASP Top 10 for LLM Apps 2025 LLM10 (Unbounded Consumption) |
+
+## Standard checks
+
+A competent team does these once S1 or S6 touches the surface.
+
+| Check (do this) | Why it matters to your business | Evidence the agent must produce | Citation |
+|---|---|---|---|
+| Map every money-moving or quota-consuming flow (checkout, upgrade, refund, payout, credit grant, coupon redemption) and confirm each is protected against automated abuse (throttling, bot/captcha, per-account limits where apt). | Flows that cost you money on every run get scripted: mass coupon redemption, refund abuse, payout draining, signup-bonus farming. | A table of business flows with cash or quota impact, and for each the abuse protection in place, or "UNPROTECTED" with the concrete abuse it enables in plain words. | OWASP API Security Top 10 2023 API6 (Unrestricted Access to Sensitive Business Flows) |
+| Confirm only the account that owns a payment, subscription, or invoice can read or change it, by re-checking ownership on the server for every billing record access. | Otherwise a stranger can open another customer's invoices or cancel their subscription by changing an ID in the address bar. | The authorization check on each billing-record route (who is allowed, how ownership is confirmed server-side), or a flagged route that returns a record without an ownership check. | OWASP API Security Top 10 2023 API6 (Unrestricted Access to Sensitive Business Flows); OWASP Top 10:2025 A01 (Broken Access Control) |
+| Confirm payment and billing events are logged with enough detail to investigate disputes and detect abuse (who, what amount, which order, when, success or failure). | Without a money trail you cannot resolve a chargeback, prove what a customer was charged, or notice a draining attack in progress. | A sample of the actual billing log entries (fields captured), and a note on any money-moving action that produces no log. | OWASP Top 10:2025 A09 (Security Logging and Alerting Failures) |
+| Confirm payment and AI-call failures are handled deliberately so a failed charge or a provider error leaves the account in a correct, non-granting state (fail closed, not fail open). | A mishandled error can grant the product when the charge actually failed, or charge a customer while showing them an error. | The code paths for payment failure and provider error, annotated to show the resulting account state, and any path that grants on an unconfirmed or failed payment. | OWASP Top 10:2025 A10 (Mishandling of Exceptional Conditions) |
+| If the app calls a paid AI service, add per-user-per-day and per-session caps plus a soft warning threshold (alert or downgrade to a cheaper model before the hard cap). | Layered caps catch a slow drain that a single total cap misses, and a soft warning gives you time to react before the hard stop. | The configured caps (per session, per user per day, total) and the soft-threshold action, shown as the actual settings or code. | OWASP Top 10 for LLM Apps 2025 LLM10 (Unbounded Consumption) |
+
+## Extra-mile checks
+
+Frontier practice. Each row names the stakes gate that justifies it and the named pattern. Do not apply these to a flow that moves no money or to a low-stakes app.
+
+| Check (do this) | Why it matters to your business | Evidence the agent must produce | Citation |
+|---|---|---|---|
+| **Gate: S1 + S5 (money at scale).** Run a focused review of every business flow with cash or quota value as an abuse target, attempting the abuse (replayed webhook, tampered amount, repeated refund, coupon farming) and recording what the app allowed. This is business-flow red-teaming. | Money flows are attacked by automation, not curiosity; a deliberate abuse pass finds the gaps a normal test never triggers. | A results log per flow: the abuse attempted, the app's response, and pass or fail with the evidence (request and outcome). | OWASP API Security Top 10 2023 API6 (Unrestricted Access to Sensitive Business Flows) |
+| **Gate: paid AI on a revenue or critical path (S1/S5).** Add a model fallback chain so a provider outage, rate limit, or error automatically retries on a backup model, keeping the paid feature alive without uncapping spend. | A single AI provider going down or throttling otherwise takes a revenue-bearing feature offline; uncontrolled retries can also amplify cost. | The fallback configuration (primary model, ordered backups, the trigger conditions) and confirmation that the cost caps still apply across the chain. | OWASP Top 10 for LLM Apps 2025 LLM10 (Unbounded Consumption) |
+| **Gate: S1 or S6 on AI-decided spend.** For any code that decides or triggers a payment, payout, or credit grant, require review by a different model lineage than the one that wrote it, and a human-approval gate before an irreversible money action runs. | The same model that wrote billing logic tends to rubber-stamp its own mistakes; a different reviewer and a human gate stop a wrong or hijacked spend before it is irreversible. | The review record (which model reviewed, what it flagged) and the location of the human-approval gate guarding the irreversible action. | OWASP Top 10:2025 A08 (Software or Data Integrity Failures); OWASP API Security Top 10 2023 API6 (Unrestricted Access to Sensitive Business Flows) |
+| **Gate: paid AI feature users rely on (S1/S5).** Build a small eval (a golden set of inputs with a grader) and a runtime usage monitor for the paid AI feature, so a prompt or model change that worsens output or spikes cost is caught before it ships and watched after. | Without measurement, a prompt tweak or model swap can quietly raise cost per request or degrade quality, and you only learn from the bill or the complaints. | The golden test set and grader output, plus the usage and cost monitor with its alert thresholds. | OWASP Top 10 for LLM Apps 2025 LLM10 (Unbounded Consumption); NIST AI RMF 1.0 / AI 100-1 (MEASURE) |
+
+## When to stop and hire a human
+
+Bring in an independent payment-security or application-security professional, and do not rely on AI self-review alone, when any of these hold: real customer money moves through the app at volume; a flaw could let users obtain paid plans free or drain payouts; the app issues refunds or payouts that cannot be reversed; or a paid AI feature runs autonomously where a single bug could produce a catastrophic bill. AI-on-AI review cheaply catches a meaningful slice of these problems, and in isolated tests still missed most injected errors, so it reduces risk without removing it. Money flows that cannot be undone are exactly where the residual risk is too expensive to accept on an automated check, and a human review of the payment and billing logic is warranted before scale.
+
+## Agent instructions
+
+Run this block for Domain E.
+
+1. **Scope by stakes signals.** Detect whether the money or paid-usage surface carries S1 (money), S5 (blast radius), or S6 (irreversibility), and whether the app makes any paid AI-service call in production. Set the tier: floor by default; standard if S1 or S6 is present; extra-mile if S1 or S6 combines with S5. Apply the two AI cost-cap floor rows whenever a paid AI call exists, regardless of the other signals. Do not propose extra-mile billing-abuse defenses for a surface that moves no money.
+
+2. **Run in a clean, fresh context** with no access to the build rationale for this code, because the same-session reasoning that produced the payment and billing logic tends to inherit its blind spots. Separate context is the measured mechanism that improves the catch rate here.
+
+3. **Produce the artifacts, not verdicts.** Output the actual webhook-route list with the signature-check line (or the named unprotected route), the server code showing where price, plan, and paid-status are read from, the idempotency mechanism, the client-bundle and git secret-scan result, and the exact cost-cap and rate-limit configuration with their values. "Looks secure" is not an acceptable output; the evidence is the output.
+
+4. **Emit a findings table** with these columns: Severity, Business risk in plain words, Evidence artifact, Citation, Suggested fix. One row per finding. Translate every finding into the concrete business consequence (for example, "a stranger can unlock the paid plan for free by sending a forged payment webhook," not "missing signature verification"). Cite only the controls named in this domain. For any payment-gateway-specific signature scheme, state the plain meaning and leave the provider-specific verification to a later provider-specific pass; this English phase stays provider-agnostic.
+
+5. **State residual risk.** If S1 or S6 is present and findings touch irreversible money flows, end with the explicit recommendation from "When to stop and hire a human," noting that this automated review reduces risk but does not replace an independent professional review for high-stakes money flows.

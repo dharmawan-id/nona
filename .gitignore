@@ -1,0 +1,9 @@
+# internal working material, never shipped to the public repo
+_research/
+_build/
+
+# os / editor noise
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
