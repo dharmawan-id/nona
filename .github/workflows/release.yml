@@ -18,6 +18,12 @@ jobs:
   release:
     name: Release and Publish
     runs-on: ubuntu-latest
+    # Gated off until the first manual npm publish + Trusted Publishing setup is done.
+    # changesets/action attempts to publish unpublished packages on every push to main,
+    # which fails with E404 before the packages exist on npm. Set the repository variable
+    # RELEASE_ENABLED=true (Settings > Secrets and variables > Actions > Variables) once
+    # the trusted publisher is configured, and this pipeline goes live.
+    if: ${{ vars.RELEASE_ENABLED == 'true' }}
     permissions:
       contents: write
       pull-requests: write
