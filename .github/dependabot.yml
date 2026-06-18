@@ -1,0 +1,23 @@
+# Dependabot: weekly dependency + action updates (W-14 supply-chain, BUILD ENGINE v2).
+# npm ecosystems are the two published packages (mcp/, cli/); github-actions keeps
+# the workflow action refs current and is the path to SHA-pinning over time.
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/mcp"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    groups:
+      mcp-deps:
+        patterns: ["*"]
+  - package-ecosystem: "npm"
+    directory: "/cli"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5

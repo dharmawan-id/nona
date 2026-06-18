@@ -24,3 +24,23 @@ jobs:
             exit 1
           fi
           echo "No em-dash found."
+
+  supply-chain:
+    # W-14 per-release gate (BUILD ENGINE v2): dependency audit + SAST on NONA's own code.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: npm audit (mcp deps, fail on high/critical)
+        working-directory: mcp
+        run: |
+          npm install --package-lock-only --ignore-scripts
+          npm audit --audit-level=high
+
+      - name: Semgrep SAST (report-only on first wiring; flip to --error once green)
+        run: |
+          python -m pip install --quiet semgrep
+          semgrep --config p/security-audit --config p/secrets --exclude node_modules --metrics off .

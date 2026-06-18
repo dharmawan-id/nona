@@ -1,0 +1,24 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.dharmawan-id/nona-mcp",
+  "title": "NONA MCP",
+  "description": "Audit the app you built with AI but cannot read: 12 domains, stakes-gated.",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/dharmawan-id/nona",
+    "source": "github",
+    "subfolder": "mcp"
+  },
+  "websiteUrl": "https://github.com/dharmawan-id/nona",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "nona-mcp",
+      "version": "0.1.0",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}

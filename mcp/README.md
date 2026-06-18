@@ -1,5 +1,9 @@
 # NONA MCP server
 
+[![npm version](https://img.shields.io/npm/v/nona-mcp)](https://www.npmjs.com/package/nona-mcp)
+![node](https://img.shields.io/badge/node-%3E%3D18-brightgreen)
+![license](https://img.shields.io/badge/license-MIT-blue)
+
 Run NONA (Non-Coder Audit) as an MCP server, so any MCP-capable coding agent (Claude Code, Cursor, and others) can pull the audit protocol and scope an audit on demand, without you copying any files into your project.
 
 It is a small stdio server. It makes no network calls and sends no telemetry. It only returns the protocol and the audit plan it computes locally.
@@ -14,6 +18,8 @@ Four tools:
 - `nona_get_domain`: the summary and the link to the full protocol file for one domain.
 
 ## Install
+
+Requirements: Node 18 or newer. No other setup, no API key, no account.
 
 ### From npm (once published)
 
@@ -47,6 +53,12 @@ cd nona/mcp && npm install
 ## A note on trust
 
 NONA is itself an instruction set an agent ingests, the exact file class attackers target. This server only reads its own bundled protocol and returns text; it never tells your agent to fetch and run anything from the internet, and it asks for nothing about your code. Read `server.mjs` and `gate.mjs` before you trust them. The protocol's own self-defense guidance is in the repo's `SECURITY.md`.
+
+## Support
+
+- Questions or bugs: open an issue at [github.com/dharmawan-id/nona/issues](https://github.com/dharmawan-id/nona/issues).
+- A security problem in the code: see [SECURITY.md](https://github.com/dharmawan-id/nona/blob/main/SECURITY.md) for the private reporting path.
+- The full protocol, the twelve domains, and the reasoning behind each check live in the [main repository](https://github.com/dharmawan-id/nona).
 
 ## License
 

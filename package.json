@@ -1,0 +1,16 @@
+{
+  "name": "nona-root",
+  "private": true,
+  "description": "Workspaces root for the NONA repo. Never published; it only lets Changesets find the two packages (mcp, cli).",
+  "workspaces": [
+    "mcp",
+    "cli"
+  ],
+  "scripts": {
+    "release": "changeset publish",
+    "changeset": "changeset"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.0"
+  }
+}

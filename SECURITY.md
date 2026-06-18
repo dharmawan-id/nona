@@ -54,4 +54,10 @@ Following this guidance keeps NONA from being the weak link. It does not make yo
 
 ## Reporting a security problem
 
-If you find a security problem in NONA itself, a weakness in its instructions, a way the protocol could be turned against an adopter, a tampered copy circulating somewhere, please report it by opening an issue in the project repository. Describe what you found and how to reproduce it. Because NONA is plain text with no secret behavior, most issues can be discussed openly, which also lets every adopter benefit from the fix.
+NONA has two parts, and they take two reporting paths.
+
+For the protocol text itself (a weakness in its instructions, a way the protocol could be turned against an adopter, a tampered copy circulating somewhere): open an issue in the project repository. The protocol is plain text with no secret behavior, so most of these can be discussed openly, and every adopter benefits from the fix.
+
+For the code that ships as a package (the `nona-mcp` server and the `nona-audit` installer): if you find a vulnerability that should stay private until it is fixed, report it through GitHub Private Vulnerability Reporting on the repository (the Security tab, "Report a vulnerability"). That opens a private advisory visible only to you and the maintainer.
+
+Response commitment for a solo-maintained project: acknowledgement within 7 days, and a fix or a published mitigation targeted within 90 days of a confirmed report. Supported version: the latest release. In either path, describe what you found and how to reproduce it.
